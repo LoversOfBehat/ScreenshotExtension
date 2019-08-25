@@ -12,10 +12,6 @@ use LoversOfBehat\ScreenshotExtension\Listener\FailedStepListener;
 use LoversOfBehat\ScreenshotExtension\Photographer;
 use LoversOfBehat\ScreenshotExtension\Storage\FileSystem;
 use LoversOfBehat\ScreenshotExtension\StorageHandler;
-use LoversOfBehat\TableExtension\Context\Initializer\TableAwareInitializer;
-use LoversOfBehat\TableExtension\EnvironmentContainer;
-use LoversOfBehat\TableExtension\Hook\Context\Annotation\HookAnnotationReader;
-use LoversOfBehat\TableExtension\Listener\EnvironmentListener;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -97,31 +93,6 @@ class ScreenshotExtension implements ExtensionInterface
         ]);
         $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, array('priority' => 0));
         $container->setDefinition('screenshot_extension.failed_step_listener', $definition);
-
-        // // Define the environment container service.
-        // $definition = new Definition(EnvironmentContainer::class);
-        // $container->setDefinition('table_extension.environment_container', $definition);
-
-        // // Define the event listener that captures the Behat test environment and stores it in the container.
-        // $definition = new Definition(EnvironmentListener::class, [
-        //     new Reference('table_extension.environment_container'),
-        // ]);
-        // $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, array('priority' => 0));
-        // $container->setDefinition('table_extension.environment_listener', $definition);
-
-        // // Define the context initializer.
-        // $definition = new Definition(TableAwareInitializer::class, [
-        //     new Reference('hook.dispatcher'),
-        //     new Reference('table_extension.environment_container'),
-        //     '%table.parameters%',
-        // ]);
-        // $definition->addTag(ContextExtension::INITIALIZER_TAG, array('priority' => 0));
-        // $container->setDefinition('table_extension.context_initializer', $definition);
-
-        // // Define the hook annotation reader.
-        // $definition = new Definition(HookAnnotationReader::class);
-        // $definition->addTag(ContextExtension::ANNOTATION_READER_TAG);
-        // $container->setDefinition('table_extension.hook_annotation_reader', $definition);
     }
 
     /**

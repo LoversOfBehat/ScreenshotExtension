@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Reference;
 class ScreenshotExtension implements ExtensionInterface
 {
 
-    const CONFIG_KEY = 'screenshot';
+    public const CONFIG_KEY = 'screenshot';
 
     /**
      * {@inheritdoc}

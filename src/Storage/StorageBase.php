@@ -78,4 +78,5 @@ abstract class StorageBase implements StorageInterface
     {
         return $this->output;
     }
+
 }

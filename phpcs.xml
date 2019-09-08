@@ -4,6 +4,7 @@
   <config name="installed_paths" value="../../slevomat/coding-standard"/>
   <rule ref="PSR12">
     <exclude name="Generic.Files.LineLength.TooLong" />
+    <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
   </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
     <properties>

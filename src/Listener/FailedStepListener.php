@@ -7,7 +7,6 @@ namespace LoversOfBehat\ScreenshotExtension\Listener;
 use Behat\Behat\EventDispatcher\Event\AfterStepTested;
 use Behat\Behat\EventDispatcher\Event\StepTested;
 use Behat\Testwork\Tester\Result\TestResult;
-use LoversOfBehat\ScreenshotExtension\Photographer;
 use LoversOfBehat\ScreenshotExtension\PhotographerInterface;
 use LoversOfBehat\ScreenshotExtension\StorageHandlerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -65,7 +64,7 @@ class FailedStepListener implements EventSubscriberInterface
 
         // If no screenshot was taken we cannot store it. This can happen if e.g. a failure occurred before the first
         // page was loaded.
-        if ($screenshot === NULL) {
+        if ($screenshot === null) {
             return;
         }
 
@@ -82,7 +81,8 @@ class FailedStepListener implements EventSubscriberInterface
      * @return string
      *   The filename.
      */
-    protected function generateFilename(AfterStepTested $event): string {
+    protected function generateFilename(AfterStepTested $event): string
+    {
         $feature = $event->getFeature();
         $step = $event->getStep();
 
@@ -97,5 +97,4 @@ class FailedStepListener implements EventSubscriberInterface
 
         return "$timestamp-$feature_name-$line_number";
     }
-
 }

@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace LoversOfBehat\ScreenshotExtension\Storage;
 
-use const DIRECTORY_SEPARATOR;
 use LoversOfBehat\ScreenshotExtension\Exception\InvalidStorageConfigException;
 use LoversOfBehat\ScreenshotExtension\ScreenshotInterface;
+use const DIRECTORY_SEPARATOR;
 
 /**
  * Storage plugin that stores plugins on the local filesystem.
@@ -30,7 +30,7 @@ class FileSystem extends StorageBase
         $path = $this->getPath();
 
         // If the folder does not exist, try to create it.
-        if (!is_dir($path) && !mkdir($path, 0755, TRUE)) {
+        if (!is_dir($path) && !mkdir($path, 0755, true)) {
             throw new InvalidStorageConfigException($this->getId(), "The directory '$path' does not exist and could not be created.");
         }
 

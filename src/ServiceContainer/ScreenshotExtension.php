@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace LoversOfBehat\ScreenshotExtension\ServiceContainer;
 
-use Behat\Behat\Context\ServiceContainer\ContextExtension;
 use Behat\Behat\EventDispatcher\ServiceContainer\EventDispatcherExtension;
 use Behat\Testwork\ServiceContainer\Extension as ExtensionInterface;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
@@ -102,4 +101,5 @@ class ScreenshotExtension implements ExtensionInterface
     {
         return self::CONFIG_KEY;
     }
+
 }

@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace LoversOfBehat\ScreenshotExtension;
 
 use LoversOfBehat\ScreenshotExtension\Storage\StorageInterface;
-use Symfony\Component\Console\Output\ConsoleOutputInterface;
 
 /**
  * Default implementation of the service that handles screenshot storage.

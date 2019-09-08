@@ -39,18 +39,16 @@ class Photographer implements PhotographerInterface
                 // The Selenium driver returns screenshots as PNG images.
                 $image = $this->mink->getSession()->getDriver()->getScreenshot();
                 return new Screenshot($image, $filename . '.png');
-            }
-            else {
+            } else {
                 // Fall back to returning the HTML page if Selenium is not used.
                 $image = $this->mink->getSession()->getPage()->getContent();
                 return new Screenshot($image, $filename . '.html');
             }
-        }
-        catch (DriverException $e) {
+        } catch (DriverException $e) {
             // A DriverException might occur if no page has been loaded yet so no
             // screenshot can yet be taken. In this case we exit silently, allowing
             // the remainder of the test suite to run.
-            return NULL;
+            return null;
         }
     }
 

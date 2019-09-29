@@ -6,6 +6,7 @@ namespace LoversOfBehat\ScreenshotExtension\Storage;
 
 use LoversOfBehat\ScreenshotExtension\Exception\InvalidStorageConfigException;
 use LoversOfBehat\ScreenshotExtension\ScreenshotInterface;
+
 use const DIRECTORY_SEPARATOR;
 
 /**

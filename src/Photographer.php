@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace LoversOfBehat\ScreenshotExtension;
 
+use Behat\Mink\Exception\DriverException;
 use Behat\Mink\Mink;
 
 /**

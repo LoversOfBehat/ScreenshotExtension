@@ -36,6 +36,12 @@ class Photographer implements PhotographerInterface
     public function snap(string $filename): ?ScreenshotInterface
     {
         try {
+            // If the Mink session has not started yet it is too early to snap a
+            // screenshot.
+            if (!$this->mink->getSession()->isStarted()) {
+              return null;
+            }
+
             if ($this->mink->getSession()->getDriver() instanceof Selenium2Driver) {
                 // The Selenium driver returns screenshots as PNG images.
                 $image = $this->mink->getSession()->getDriver()->getScreenshot();
